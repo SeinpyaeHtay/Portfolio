@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pyae Pyae | Drafter & BIM Modeler</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7fa;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #111827;
+            color: white;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h2 {
+            color: white;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+        }
+
+        nav a:hover {
+            color: #60a5fa;
+        }
+
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            padding: 60px 8%;
+            background: white;
+        }
+
+        .hero-text {
+            max-width: 700px;
+        }
+
+        .hero h1 {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #2563eb;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #6b7280;
+            margin-bottom: 30px;
+        }
+
+        .button {
+            display: inline-block;
+            background: #2563eb;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 6px;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+
+        .button:hover {
+            background: #1d4ed8;
+        }
+
+        section {
+            padding: 70px 8%;
+        }
+
+        section h2 {
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .project-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .project-card h3 {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        @media (max-width: 700px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 0 7px;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h2>Pyae Pyae</h2>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-text">
+
+        <h1>
+            Drafter & <span>BIM Modeler</span>
+        </h1>
+
+        <p>
+            Construction Drafter with experience in AutoCAD,
+            Revit BIM Modelling and construction documentation.
+        </p>
+
+        <a href="#projects" class="button">View My Work</a>
+
+        <a href="#contact" class="button">Contact Me</a>
+
+    </div>
+</section>
+
+<section id="about">
+
+    <h2>About Me</h2>
+
+    <p>
+        I am a construction Drafter and BIM Modeler with experience
+        in architectural and structural drafting, construction drawings,
+        AutoCAD and Revit BIM modelling.
+    </p>
+
+</section>
+
+<section id="skills">
+
+    <h2>Technical Skills</h2>
+
+    <div class="skills">
+
+        <div class="skill-card">
+            <h3>AutoCAD</h3>
+            <p>2D drafting, construction drawings and detailing.</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>Revit</h3>
+            <p>BIM modelling, plans, sections and elevations.</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>SketchUp</h3>
+            <p>3D modelling, scenes, materials and presentation.</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>Construction Drawing</h3>
+            <p>Working drawings, shop drawings and documentation.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="projects">
+
+    <h2>Selected Projects</h2>
+
+    <div class="projects">
+
+        <div class="project-card">
+            <h3>Project 01</h3>
+            <p>
+                Architectural / Construction Drawing Project
+            </p>
+        </div>
+
+        <div class="project-card">
+            <h3>Project 02</h3>
+            <p>
+                Revit BIM Modelling Project
+            </p>
+        </div>
+
+        <div class="project-card">
+            <h3>Project 03</h3>
+            <p>
+                AutoCAD Drafting Project
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="contact">
+
+    <h2>Contact</h2>
+
+    <p>Email: your-email@example.com</p>
+
+    <p>Location: Myanmar</p>
+
+</section>
+
+<footer>
+
+    <p>© 2026 Pyae Pyae. All Rights Reserved.</p>
+
+</footer>
+
+</body>
+</html>
