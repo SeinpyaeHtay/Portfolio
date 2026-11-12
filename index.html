@@ -90,7 +90,7 @@ document.querySelectorAll('.media-slot,.project-slot').forEach(slot=>{
 });
 function closeBox(){document.getElementById('lightbox').classList.remove('open');document.getElementById('lightboxImage').src='';}
 document.getElementById('closeLightbox').addEventListener('click',closeBox);
-document.getElementById('lightbox').addEventListener('click',e=>{if(e.target.id==='lightbox')closeBox();});
+document.getElementById('lightbox').addEventListener('click',e=>{if(e.target.id==='lightbox')closeBox();}); 
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeBox();});
 </script>
 </body>
