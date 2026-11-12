@@ -1,272 +1,288 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Sein Pyae Htay | Drafter & BIM Modeler</title>
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background: #f5f7fa;
-            color: #1f2937;
-            line-height: 1.6;
-        }
-
-        header {
-            background: #111827;
-            color: white;
-            padding: 20px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        header h2 {
-            color: white;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 25px;
-        }
-
-        nav a:hover {
-            color: #60a5fa;
-        }
-
-        .hero {
-            min-height: 80vh;
-            display: flex;
-            align-items: center;
-            padding: 60px 8%;
-            background: white;
-        }
-
-        .hero-text {
-            max-width: 700px;
-        }
-
-        .hero h1 {
-            font-size: 50px;
-            margin-bottom: 15px;
-        }
-
-        .hero h1 span {
-            color: #2563eb;
-        }
-
-        .hero p {
-            font-size: 20px;
-            color: #6b7280;
-            margin-bottom: 30px;
-        }
-
-        .button {
-            display: inline-block;
-            background: #2563eb;
-            color: white;
-            padding: 12px 25px;
-            border-radius: 6px;
-            text-decoration: none;
-            margin-right: 10px;
-        }
-
-        .button:hover {
-            background: #1d4ed8;
-        }
-
-        section {
-            padding: 70px 8%;
-        }
-
-        section h2 {
-            font-size: 32px;
-            margin-bottom: 30px;
-        }
-
-        .skills {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-        }
-
-        .skill-card {
-            background: white;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-        }
-
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
-
-        .project-card {
-            background: white;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-        }
-
-        .project-card h3 {
-            margin-bottom: 10px;
-        }
-
-        footer {
-            background: #111827;
-            color: white;
-            text-align: center;
-            padding: 25px;
-        }
-
-        @media (max-width: 700px) {
-            header {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            nav a {
-                margin: 0 7px;
-            }
-
-            .hero h1 {
-                font-size: 38px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Sein Pyae Htay, Drafter and BIM Modeler specializing in AutoCAD drafting, Revit BIM modelling and construction documentation.">
+  <title>Sein Pyae Htay | Drafter &amp; BIM Modeler</title>
+  <style>
+    :root {
+      --navy: #101c2c;
+      --navy-2: #17283d;
+      --blue: #4c9cff;
+      --ink: #182435;
+      --muted: #66758a;
+      --paper: #f5f7fa;
+      --white: #ffffff;
+      --line: #e2e8f0;
+      --radius: 16px;
+      --shadow: 0 12px 34px rgba(16, 28, 44, .08);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 82px; }
+    body { font-family: Arial, Helvetica, sans-serif; color: var(--ink); background: var(--paper); line-height: 1.65; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    .container { width: min(1120px, 90%); margin: auto; }
+    .topbar { position: sticky; top: 0; z-index: 20; background: rgba(16,28,44,.97); backdrop-filter: blur(12px); color: white; }
+    .nav { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { font-size: 17px; font-weight: 800; letter-spacing: .2px; white-space: nowrap; }
+    .brand span { color: var(--blue); }
+    .nav-links { display: flex; align-items: center; gap: 21px; flex-wrap: wrap; }
+    .nav-links a { color: #d8e2ef; font-size: 13px; }
+    .nav-links a:hover { color: white; }
+    .menu-btn { display: none; border: 1px solid #536276; color: white; background: transparent; border-radius: 8px; padding: 8px 11px; }
+    .hero { background: linear-gradient(120deg, var(--navy), #203b5b); color: white; padding: 100px 0 92px; }
+    .hero-grid { display: grid; grid-template-columns: 1.45fr .8fr; gap: 55px; align-items: center; }
+    .eyebrow { color: #8fc3ff; text-transform: uppercase; letter-spacing: 2px; font-size: 12px; font-weight: 700; }
+    h1 { font-size: clamp(38px, 6vw, 66px); line-height: 1.08; margin: 15px 0 18px; letter-spacing: -1.8px; }
+    h1 span { color: #75b6ff; }
+    .hero-copy { color: #d3deeb; max-width: 650px; font-size: 17px; }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 12px 19px; border-radius: 9px; font-weight: 700; font-size: 14px; border: 1px solid transparent; transition: .2s; }
+    .btn-primary { background: var(--blue); color: #071729; }
+    .btn-primary:hover { background: #8bc4ff; transform: translateY(-2px); }
+    .btn-outline { border-color: #8094aa; color: white; }
+    .btn-outline:hover { background: rgba(255,255,255,.1); }
+    .hero-panel { border: 1px solid rgba(255,255,255,.18); background: rgba(255,255,255,.07); padding: 26px; border-radius: 18px; }
+    .hero-panel .panel-label { color: #9fcaff; font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; }
+    .hero-panel h2 { font-size: 22px; margin: 8px 0 15px; }
+    .hero-panel p { color: #d2deeb; font-size: 14px; margin: 7px 0; }
+    .hero-panel strong { color: white; }
+    section { padding: 78px 0; }
+    .section-head { margin-bottom: 30px; }
+    .section-kicker { color: #347ec7; font-size: 11px; text-transform: uppercase; letter-spacing: 1.8px; font-weight: 800; }
+    h2.section-title { font-size: clamp(27px, 4vw, 36px); line-height: 1.2; margin: 7px 0 10px; color: var(--navy); }
+    .section-intro { color: var(--muted); max-width: 760px; }
+    .about-grid { display: grid; grid-template-columns: 1.4fr .8fr; gap: 28px; }
+    .card { background: white; border: 1px solid var(--line); border-radius: var(--radius); padding: 25px; box-shadow: var(--shadow); }
+    .about-copy p { color: #536174; margin-bottom: 13px; }
+    .quick-facts { display: grid; gap: 13px; }
+    .fact { padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+    .fact:last-child { border: 0; padding: 0; }
+    .fact small { display: block; color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: 1px; }
+    .fact strong { color: var(--navy); font-size: 15px; }
+    .skills-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .skill-card { background: white; padding: 21px; border: 1px solid var(--line); border-radius: 13px; }
+    .skill-card h3 { color: var(--navy); font-size: 17px; margin-bottom: 7px; }
+    .skill-card p { color: var(--muted); font-size: 13px; }
+    .level { display: inline-block; margin-top: 13px; font-size: 11px; color: #2367a8; background: #eaf4ff; padding: 4px 9px; border-radius: 30px; font-weight: 700; }
+    .timeline { display: grid; gap: 16px; }
+    .timeline-item { display: grid; grid-template-columns: 180px 1fr; gap: 22px; padding: 22px 24px; background: white; border: 1px solid var(--line); border-radius: 13px; }
+    .timeline-date { color: #347ec7; font-weight: 800; font-size: 13px; }
+    .timeline-item h3 { color: var(--navy); font-size: 17px; }
+    .timeline-item p { color: var(--muted); font-size: 14px; margin-top: 5px; }
+    .education-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .education-card h3 { color: var(--navy); font-size: 17px; margin-bottom: 9px; }
+    .education-card p { color: var(--muted); font-size: 14px; margin: 5px 0; }
+    .cert-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+    .cert { background: white; border: 1px solid var(--line); border-radius: 13px; padding: 20px; }
+    .cert strong { display: block; color: var(--navy); margin-bottom: 5px; }
+    .cert span { color: var(--muted); font-size: 13px; }
+    .project-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .project-card { overflow: hidden; background: white; border: 1px solid var(--line); border-radius: 15px; box-shadow: var(--shadow); }
+    .project-image { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; background: #e8edf3; }
+    .image-placeholder { display: grid; place-items: center; color: #6f8195; font-size: 13px; background: repeating-linear-gradient(135deg,#edf1f5,#edf1f5 12px,#e5ebf1 12px,#e5ebf1 24px); }
+    .project-body { padding: 20px; }
+    .project-number { color: #347ec7; font-size: 11px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; }
+    .project-body h3 { color: var(--navy); font-size: 18px; margin: 5px 0 9px; }
+    .project-meta { display: flex; flex-wrap: wrap; gap: 7px; margin: 10px 0; }
+    .tag { font-size: 11px; color: #36516e; background: #edf4fb; padding: 5px 9px; border-radius: 30px; }
+    .project-body p { color: var(--muted); font-size: 13px; }
+    .development-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .development-card h3 { color: var(--navy); margin-bottom: 10px; font-size: 17px; }
+    .development-card ul { padding-left: 18px; color: var(--muted); font-size: 14px; }
+    .language-row { display: flex; gap: 10px; flex-wrap: wrap; }
+    .language { background: white; border: 1px solid var(--line); border-radius: 30px; padding: 9px 15px; color: #43546a; font-size: 13px; }
+    .contact { background: var(--navy); color: white; }
+    .contact .section-title { color: white; }
+    .contact .section-intro { color: #c3d0df; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; }
+    .contact-details { display: grid; gap: 12px; margin-top: 20px; color: #d4dfeb; font-size: 14px; }
+    .contact-details a { color: #8fc3ff; overflow-wrap: anywhere; }
+    .contact-note { background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.15); border-radius: 14px; padding: 24px; color: #d4dfeb; font-size: 14px; }
+    footer { background: #0a1421; color: #9cabbc; text-align: center; padding: 22px; font-size: 12px; }
+    @media (max-width: 850px) {
+      .hero-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; }
+      .skills-grid { grid-template-columns: repeat(2, 1fr); }
+      .nav { padding: 14px 0; align-items: flex-start; }
+      .nav-links { gap: 12px; justify-content: flex-end; }
+    }
+    @media (max-width: 600px) {
+      .nav { align-items: center; }
+      .menu-btn { display: block; }
+      .nav-links { display: none; position: absolute; top: 68px; left: 0; right: 0; background: var(--navy); padding: 18px 5%; flex-direction: column; align-items: flex-start; }
+      .nav-links.open { display: flex; }
+      .hero { padding: 72px 0; }
+      section { padding: 58px 0; }
+      .skills-grid, .project-grid, .education-grid, .cert-list, .development-grid { grid-template-columns: 1fr; }
+      .timeline-item { grid-template-columns: 1fr; gap: 5px; }
+    }
+  </style>
 </head>
-
 <body>
-
-<header>
-    <h2>Sein Pyae Htay</h2>
-
-    <nav>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </nav>
-</header>
-
-<section class="hero">
-    <div class="hero-text">
-
-        <h1>
-            Drafter & <span>BIM Modeler</span>
-        </h1>
-
-        <p>
-            Construction Drafter with experience in AutoCAD,
-            Revit BIM Modelling and construction documentation.
-        </p>
-
-        <a href="#projects" class="button">View My Work</a>
-
-        <a href="#contact" class="button">Contact Me</a>
-
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="#home">SEIN PYAE HTAY<span>.</span></a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open navigation">Menu</button>
+      <nav class="nav-links" id="navLinks">
+        <a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Experience</a>
+        <a href="#education">Education</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
+      </nav>
     </div>
-</section>
+  </header>
 
-<section id="about">
-
-    <h2>About Me</h2>
-
-    <p>
-        I am a construction Drafter and BIM Modeler with experience
-        in architectural and structural drafting, construction drawings,
-        AutoCAD and Revit BIM modelling.
-    </p>
-
-</section>
-
-<section id="skills">
-
-    <h2>Technical Skills</h2>
-
-    <div class="skills">
-
-        <div class="skill-card">
-            <h3>AutoCAD</h3>
-            <p>2D drafting, construction drawings and detailing.</p>
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Professional Portfolio · 2026</div>
+          <h1>Sein Pyae Htay<br><span>Drafter &amp; BIM Modeler</span></h1>
+          <p class="hero-copy">Civil Engineering professional with approximately 3 years of experience in construction drafting, architectural documentation and BIM modelling.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">Explore Projects</a>
+            <a class="btn btn-outline" href="Sein_Pyae_Htay_Resume.pdf" target="_blank" rel="noopener">Download Resume</a>
+          </div>
         </div>
+        <aside class="hero-panel">
+          <div class="panel-label">Professional Focus</div>
+          <h2>Drafting · BIM · Documentation</h2>
+          <p><strong>Primary software:</strong> AutoCAD</p>
+          <p><strong>BIM software:</strong> Autodesk Revit</p>
+          <p><strong>3D modelling:</strong> SketchUp</p>
+          <p><strong>Additional:</strong> Tekla Structural Designer</p>
+        </aside>
+      </div>
+    </section>
 
-        <div class="skill-card">
-            <h3>Revit</h3>
-            <p>BIM modelling, plans, sections and elevations.</p>
+    <section id="about">
+      <div class="container">
+        <div class="section-head"><div class="section-kicker">Profile</div><h2 class="section-title">About Me</h2></div>
+        <div class="about-grid">
+          <div class="card about-copy">
+            <p>I am a Civil Engineering professional with approximately 3 years of experience in construction drafting, architectural documentation and BIM modelling. I hold a Level 4 Diploma and Level 5 Advanced Diploma in Civil Engineering, with practical experience in both site engineering and technical drawing preparation.</p>
+            <p>I began my career as a Site Engineer cum Drafter and later progressed to BIM Modeler cum Drafter at King Construction. My work has involved construction drawing preparation, site coordination, architectural drafting, 3D building modelling and technical documentation.</p>
+            <p>My core technical expertise includes AutoCAD 2D drafting and Autodesk Revit BIM modelling, particularly in architectural and structural drawing development. I am detail-oriented and responsible, and committed to producing accurate technical drawings while continuously developing my BIM capabilities.</p>
+          </div>
+          <div class="card quick-facts">
+            <div class="fact"><small>Professional title</small><strong>Drafter &amp; BIM Modeler</strong></div>
+            <div class="fact"><small>Experience</small><strong>Approximately 3 years</strong></div>
+            <div class="fact"><small>Current location</small><strong>Myanmar</strong></div>
+            <div class="fact"><small>Primary drafting tool</small><strong>AutoCAD</strong></div>
+          </div>
         </div>
+      </div>
+    </section>
 
-        <div class="skill-card">
-            <h3>SketchUp</h3>
-            <p>3D modelling, scenes, materials and presentation.</p>
+    <section id="skills" style="background:#edf2f7">
+      <div class="container">
+        <div class="section-head"><div class="section-kicker">Capabilities</div><h2 class="section-title">Technical Skills</h2><p class="section-intro">Software and technical capabilities based on the skills described in the portfolio.</p></div>
+        <div class="skills-grid">
+          <article class="skill-card"><h3>AutoCAD</h3><p>2D architectural drafting, floor plans, elevations, sections, details, layers, dimensions, annotations, layouts, plotting and drawing revisions.</p><span class="level">Intermediate</span></article>
+          <article class="skill-card"><h3>Autodesk Revit</h3><p>Architectural 3D modelling, walls, floors, roofs, ceilings, doors, windows, stairs, sheets, documentation and basic family modification and creation.</p><span class="level">Basic to Intermediate</span></article>
+          <article class="skill-card"><h3>SketchUp</h3><p>3D modelling and visualization for residential, interior and exterior design projects.</p><span class="level">Listed in portfolio</span></article>
+          <article class="skill-card"><h3>Tekla</h3><p>Basic knowledge of structural modelling and introductory structural design training.</p><span class="level">Basic</span></article>
+          <article class="skill-card"><h3>Microsoft Project</h3><p>Project scheduling, task tracking and Gantt charts.</p></article>
+          <article class="skill-card"><h3>Microsoft Office</h3><p>Word for technical documentation, Excel for spreadsheets and PowerPoint for presentations.</p></article>
+          <article class="skill-card"><h3>Adobe Photoshop</h3><p>Basic image editing.</p></article>
+          <article class="skill-card"><h3>Canva</h3><p>Presentation and portfolio design.</p></article>
         </div>
+      </div>
+    </section>
 
-        <div class="skill-card">
-            <h3>Construction Drawing</h3>
-            <p>Working drawings, shop drawings and documentation.</p>
+    <section id="experience">
+      <div class="container">
+        <div class="section-head"><div class="section-kicker">Career</div><h2 class="section-title">Work Experience</h2></div>
+        <div class="timeline">
+          <article class="timeline-item"><div class="timeline-date">2024 – 2026</div><div><h3>BIM Modeler cum Drafter</h3><p><strong>King Construction</strong></p><p>Developed and updated architectural BIM models and prepared construction drawings and technical documentation using AutoCAD and Revit.</p></div></article>
+          <article class="timeline-item"><div class="timeline-date">2023 – 2024</div><div><h3>Site Engineer cum Drafter</h3><p><strong>King Construction</strong></p><p>Supported site engineering activities, site coordination and construction drawing preparation.</p></div></article>
         </div>
+      </div>
+    </section>
 
-    </div>
-
-</section>
-
-<section id="projects">
-
-    <h2>Selected Projects</h2>
-
-    <div class="projects">
-
-        <div class="project-card">
-            <h3>Project 01</h3>
-            <p>
-                Architectural / Construction Drawing Project
-            </p>
+    <section id="education" style="background:#edf2f7">
+      <div class="container">
+        <div class="section-head"><div class="section-kicker">Academic Background</div><h2 class="section-title">Education</h2></div>
+        <div class="education-grid">
+          <article class="card education-card"><h3>City &amp; Guilds London Institute (UK)</h3><p><strong>Level 5 – Advanced Diploma in Civil Engineering</strong> · Distinction · 2025–2026</p><p><strong>Level 4 – Diploma in Civil Engineering</strong> · 2024–2025</p><p><strong>Level 3 – Diploma in Civil Engineering &amp; Foundation</strong> · 2023–2024</p></article>
+          <article class="card education-card"><h3>University of the People</h3><p><strong>Associate Degree in Business Administration</strong></p><p>High Honors · 2024–2026</p></article>
         </div>
+      </div>
+    </section>
 
-        <div class="project-card">
-            <h3>Project 02</h3>
-            <p>
-                Revit BIM Modelling Project
-            </p>
+    <section id="certificates">
+      <div class="container">
+        <div class="section-head"><div class="section-kicker">Achievements</div><h2 class="section-title">Certificates</h2></div>
+        <div class="cert-list">
+          <div class="cert"><strong>AutoCAD Intermediate</strong><span>Professional Civil Engineering Completion Certificate</span></div>
+          <div class="cert"><strong>Revit Architecture &amp; Structure Essential</strong><span>Professional Civil Engineering Achievement Certificate (2nd Award)</span></div>
+          <div class="cert"><strong>SketchUp Certificate</strong><span>Professional Graphic Design Certificate</span></div>
         </div>
+      </div>
+    </section>
 
-        <div class="project-card">
-            <h3>Project 03</h3>
-            <p>
-                AutoCAD Drafting Project
-            </p>
+    <section id="projects" style="background:#edf2f7">
+      <div class="container">
+        <div class="section-head"><div class="section-kicker">Selected Work</div><h2 class="section-title">Projects</h2><p class="section-intro">A selection of drafting, BIM modelling and 3D visualization projects. Each project card is designed for one representative image. Replace the placeholder image paths with your selected project images.</p></div>
+        <div class="project-grid">
+          <article class="project-card"><img class="project-image image-placeholder" src="images/project-01.jpg" alt="Three Storey RCC Residential Building project image"><div class="project-body"><div class="project-number">Project 01 · AutoCAD</div><h3>Three Storey RCC Residential Building</h3><div class="project-meta"><span class="tag">Residential</span><span class="tag">AutoCAD &amp; SketchUp 2024</span></div><p>Architectural drafting and exterior 3D modelling. Location stated in portfolio: Yangon, Myanmar.</p></div></article>
+          <article class="project-card"><img class="project-image image-placeholder" src="images/project-02.jpg" alt="Three and Half Storey Residential Building project image"><div class="project-body"><div class="project-number">Project 02 · AutoCAD</div><h3>Three and Half Storey Residential Building</h3><div class="project-meta"><span class="tag">Residential</span><span class="tag">AutoCAD &amp; SketchUp 2024</span></div><p>Architectural plans, detail drawings, sections and elevations. Location stated in portfolio: Yangon, Myanmar.</p></div></article>
+          <article class="project-card"><img class="project-image image-placeholder" src="images/project-03.jpg" alt="One Storey RCC Building project image"><div class="project-body"><div class="project-number">Project 03 · AutoCAD</div><h3>One Storey RCC Building</h3><div class="project-meta"><span class="tag">Residential</span><span class="tag">AutoCAD &amp; SketchUp 2024</span></div><p>Architectural drafting project. Location stated in portfolio: Toon Tay, Myanmar.</p></div></article>
+          <article class="project-card"><img class="project-image image-placeholder" src="images/project-04.jpg" alt="Three and Half Storey Residential Building ISO drawing project image"><div class="project-body"><div class="project-number">Project 04 · AutoCAD</div><h3>Three and Half Storey Residential Building – ISO Drawing</h3><div class="project-meta"><span class="tag">Residential</span><span class="tag">AutoCAD 2024</span></div><p>Residential building drawing project. Location stated in portfolio: Yangon, Myanmar.</p></div></article>
+          <article class="project-card"><img class="project-image image-placeholder" src="images/project-05.jpg" alt="Three Storey with Penthouse Building project image"><div class="project-body"><div class="project-number">Project 05 · AutoCAD</div><h3>Three Storey with Penthouse Building</h3><div class="project-meta"><span class="tag">Residential</span><span class="tag">AutoCAD 2024</span></div><p>Architectural drawing project. Location stated in portfolio: Yangon, Myanmar.</p></div></article>
+          <article class="project-card"><img class="project-image image-placeholder" src="images/project-06.jpg" alt="Three Storey RCC Residential Building project image"><div class="project-body"><div class="project-number">Project 06 · AutoCAD</div><h3>Three Storey RCC Residential Building</h3><div class="project-meta"><span class="tag">Residential</span><span class="tag">AutoCAD 2024</span></div><p>Architectural drafting project. Location stated in portfolio: Mandalay, Myanmar.</p></div></article>
+          <article class="project-card"><img class="project-image image-placeholder" src="images/project-07.jpg" alt="Five Storey Hotel project image"><div class="project-body"><div class="project-number">Project 07 · AutoCAD</div><h3>Five Storey Hotel Project</h3><div class="project-meta"><span class="tag">Personal Project</span><span class="tag">AutoCAD 2024</span></div><p>Hotel project included in the portfolio as a personal project. Location stated: Myanmar.</p></div></article>
+          <article class="project-card"><img class="project-image image-placeholder" src="images/project-08.jpg" alt="Three and Half Storey Residential Building Revit model image"><div class="project-body"><div class="project-number">Project 08 · Revit</div><h3>Three and Half Storey Residential Building</h3><div class="project-meta"><span class="tag">Personal Project</span><span class="tag">Revit 2024</span></div><p>Architectural BIM modelling project. Location stated: Myanmar.</p></div></article>
+          <article class="project-card"><img class="project-image image-placeholder" src="images/project-09.jpg" alt="Mixed Use Building Revit project image"><div class="project-body"><div class="project-number">Project 09 · Revit</div><h3>Mixed Use Building Project</h3><div class="project-meta"><span class="tag">Revit 2024</span></div><p>Building modelling project. Location stated: Myanmar.</p></div></article>
+          <article class="project-card"><img class="project-image image-placeholder" src="images/project-10.jpg" alt="Toilet Setting Out Revit project image"><div class="project-body"><div class="project-number">Project 10 · Revit</div><h3>Toilet Setting Out</h3><div class="project-meta"><span class="tag">Revit 2024</span></div><p>Revit modelling and setting-out project.</p></div></article>
+          <article class="project-card"><img class="project-image image-placeholder" src="images/project-11.jpg" alt="Two Storey Building SketchUp project image"><div class="project-body"><div class="project-number">Project 11 · SketchUp</div><h3>Two Storey Building Project</h3><div class="project-meta"><span class="tag">Personal Project</span><span class="tag">SketchUp 2024</span></div><p>Residential 3D modelling project. Location stated: Myanmar.</p></div></article>
+          <article class="project-card"><img class="project-image image-placeholder" src="images/project-12.jpg" alt="Guest House exterior 3D modelling project image"><div class="project-body"><div class="project-number">Project 12 · SketchUp</div><h3>Guest House – Exterior 3D Modelling</h3><div class="project-meta"><span class="tag">Academic Project</span><span class="tag">SketchUp 2024</span></div><p>Exterior 3D modelling project. Location stated: Myanmar.</p></div></article>
+          <article class="project-card"><img class="project-image image-placeholder" src="images/project-13.jpg" alt="Monastery SketchUp project image"><div class="project-body"><div class="project-number">Project 13 · SketchUp</div><h3>Monastery Project</h3><div class="project-meta"><span class="tag">SketchUp 2024</span></div><p>3D modelling project. Location stated: Myanmar.</p></div></article>
+          <article class="project-card"><img class="project-image image-placeholder" src="images/project-14.jpg" alt="Interior Design Animation Video project image"><div class="project-body"><div class="project-number">Project 14 · Other Projects</div><h3>Interior Design Animation Video</h3><div class="project-meta"><span class="tag">SketchUp 2024</span><span class="tag">Tekla Structural Designer 2025</span></div><p>Additional work listed in the portfolio includes interior design animation and a Tekla training project covering 3D structural modelling and basic structural analysis.</p></div></article>
         </div>
+      </div>
+    </section>
 
-    </div>
+    <section id="development">
+      <div class="container">
+        <div class="section-head"><div class="section-kicker">Learning</div><h2 class="section-title">Professional Development</h2><p class="section-intro">Ongoing technical learning and skill development.</p></div>
+        <div class="development-grid">
+          <article class="card development-card"><h3>BIM Level 01 – Architecture &amp; Structure</h3><ul><li>BIM modelling (Architecture &amp; Structure)</li><li>Revit family and component library creation</li><li>BIM documentation and data extraction</li><li>Collaboration tools and worksharing</li></ul></article>
+          <article class="card development-card"><h3>BIM Level 02 – Advanced Architectural BIM</h3><ul><li>Advanced architectural BIM modelling</li><li>Conceptual and parametric modelling</li><li>Dynamo visual programming</li><li>Interior, exterior and landscape modelling</li><li>Visualization, rendering and documentation</li></ul></article>
+        </div>
+      </div>
+    </section>
 
-</section>
+    <section id="languages" style="background:#edf2f7">
+      <div class="container">
+        <div class="section-head"><div class="section-kicker">Communication</div><h2 class="section-title">Languages</h2></div>
+        <div class="language-row"><span class="language">Burmese · Native</span><span class="language">English · Intermediate</span><span class="language">Chinese · Basic, continuing to learn</span></div>
+      </div>
+    </section>
 
-<section id="contact">
+    <section class="contact" id="contact">
+      <div class="container contact-grid">
+        <div>
+          <div class="section-kicker">Get in touch</div><h2 class="section-title">Contact</h2>
+          <p class="section-intro">Thank you for reviewing my portfolio. I welcome opportunities related to drafting, BIM modelling and construction documentation.</p>
+          <div class="contact-details">
+            <div>Email: <a href="mailto:pyaepyae205200@gmail.com">pyaepyae205200@gmail.com</a></div>
+            <div>WhatsApp: <a href="https://wa.me/959400523608" target="_blank" rel="noopener">+959 400523608</a></div>
+            <div>LinkedIn: <a href="https://www.linkedin.com/in/sein-pyae-htay" target="_blank" rel="noopener">linkedin.com/in/sein-pyae-htay</a></div>
+            <div>Location: Myanmar</div>
+          </div>
+        </div>
+        <div class="contact-note"><strong>Sein Pyae Htay</strong><br>Drafter | BIM Modeler<br><br>Architectural Drafting · BIM Modelling · 3D Visualization<br><br>Better Designs for a Brighter Tomorrow</div>
+      </div>
+    </section>
+  </main>
 
-    <h2>Contact</h2>
-
-    <p>Email: your-email@example.com</p>
-
-    <p>Location: Myanmar</p>
-
-</section>
-
-<footer>
-
-    <p>© 2026 Sein Pyae Htay. All Rights Reserved.</p>
-
-</footer>
-
+  <footer>© 2026 Sein Pyae Htay. All Rights Reserved.</footer>
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    menuBtn.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => navLinks.classList.remove('open')));
+  </script>
 </body>
 </html>
